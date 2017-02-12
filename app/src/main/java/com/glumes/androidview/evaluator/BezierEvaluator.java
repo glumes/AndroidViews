@@ -1,0 +1,36 @@
+package com.glumes.androidview.evaluator;
+
+import android.animation.TypeEvaluator;
+import android.graphics.PointF;
+
+/**
+ * Created by zhaoying on 2017/2/12.
+ */
+
+public class BezierEvaluator implements TypeEvaluator<PointF> {
+
+    private PointF point1;
+    private PointF point2 ;
+
+
+    public BezierEvaluator(PointF point1, PointF point2) {
+        this.point1 = point1;
+        this.point2 = point2;
+    }
+
+    @Override
+    public PointF evaluate(float t, PointF point0, PointF point3) {
+        PointF point = new PointF();
+        float temp = 1 - t;
+        point.x = point.x * temp * temp * temp
+                + 3 * point1.x * t * temp * temp
+                + 3 * point2.x * t * t * temp + point3.x * t * t * t;
+
+        point.y = point0.y * temp * temp * temp
+                + 3 * point1.y * t * temp * temp
+                + 3 * point2.y * t * t * temp + point3.y * t * t * t;
+        return point;
+    }
+
+
+}
