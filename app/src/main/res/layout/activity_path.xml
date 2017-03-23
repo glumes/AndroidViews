@@ -10,7 +10,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.glumes.androidview.path.PathActivity">
 
-    <com.glumes.androidview.path.PathRadarView
+    <com.glumes.androidview.path.BubbleView
         android:layout_width="match_parent"
+        android:layout_centerInParent="true"
         android:layout_height="match_parent" />
 </RelativeLayout>
