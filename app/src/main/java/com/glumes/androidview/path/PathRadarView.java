@@ -16,10 +16,9 @@ import timber.log.Timber;
 
 /**
  * 利用 Path 类实现雷达路径效果
+ * 参照效果 http://blog.csdn.net/crazy__chen/article/details/50163693
  */
 public class PathRadarView extends View{
-
-
 
     private int count = 6 ;
     private Paint mRadarPaint ;      // 绘制雷达图形的画笔
@@ -32,11 +31,12 @@ public class PathRadarView extends View{
     private float mRadius ;    // 网格最大半径
 
     private Path mPolygonPath  ;     // 多边形的路径
-    private Path mLinePath ;    // 直线的路径
+    private Path mDataPath ;    // 覆盖区域的路径
     private float angle = (float) (Math.PI * 2 / count); // 数学里面的多少度，计算机里面用 Math.PI 来表示
 
     private String[] title = {"a","b","c","d","e","f"} ;
-
+    private double[] data = {100,60,60,100,50,10,20};
+    private float maxValue = 100 ;
     public PathRadarView(Context context) {
         this(context,null);
     }
@@ -52,7 +52,7 @@ public class PathRadarView extends View{
 
     private void initView() {
         mPolygonPath = new Path();
-        mLinePath = new Path() ;
+        mDataPath = new Path() ;
 
         mRadarPaint = new Paint();
         mTextPaint = new Paint();
@@ -66,6 +66,9 @@ public class PathRadarView extends View{
         mTextPaint.setStrokeWidth(5);
         mTextPaint.setTextSize(40);
         mTextPaint.setAntiAlias(true);
+
+        mDataPaint = new Paint();
+
     }
 
     @Override
@@ -74,6 +77,7 @@ public class PathRadarView extends View{
         drawPolygon(canvas);
         drawLines(canvas);
         drawText(canvas);
+        drawRegion(canvas);
     }
 
     @Override
@@ -130,19 +134,46 @@ public class PathRadarView extends View{
      * @param canvas
      */
     private void drawText(Canvas canvas){
+        // 绘制文字，可旋转了坐标系后，文字也跟着偏转了
+        // 旋转坐标系到绘制的起点，然后调整适当距离
+
         Paint.FontMetrics fontMetrics = mTextPaint.getFontMetrics() ;
-        float fontHeight = fontMetrics.descent = fontMetrics.ascent ;
-        canvas.translate(mCenterX,mCenterY);
-        canvas.save() ;
-        for (int i = 0; i < count - 1; i++) {
-            Timber.d("fontHeight value is %f",fontHeight);
-            canvas.drawText(title[i],mRadius + 10,0,mTextPaint);
-            canvas.rotate(60);
+        float fontHeight = fontMetrics.descent - fontMetrics.ascent ;
+
+        for (int i = 0; i < count; i++) {
+            float x = (float) (mCenterX + (mRadius + fontHeight / 2 ) * Math.cos(angle * i));
+            float y = (float) (mCenterY + (mRadius + fontHeight / 2 ) * Math.sin(angle * i));
+            canvas.save() ;
+            canvas.translate(x,y);
+            float dis = mTextPaint.measureText(title[i]) ;
+            canvas.drawText(title[i],0 - dis / 2,0 + dis / 2,mTextPaint);
+            canvas.restore();
         }
-        canvas.restore();
     }
 
     private void drawRegion(Canvas canvas){
-
+        mDataPaint.setAlpha(255);
+        for (int i = 0; i < count; i++) {
+            double percent = data[i] / maxValue ;
+            float x = (float) (mCenterX + mRadius * Math.cos(angle * i) * percent);
+            float y = (float) (mCenterY + mRadius * Math.sin(angle * i) * percent);
+            if (i == 0){
+                mDataPath.moveTo(x,mCenterY);
+            } else {
+                mDataPath.lineTo(x,y);
+            }
+            // 绘制圆点
+            canvas.drawCircle(x,y,10,mDataPaint);
+        }
+        // 用 Path 和 Paint 绘制线
+        mDataPaint.setStyle(Paint.Style.STROKE);
+        canvas.drawPath(mDataPath,mDataPaint);
+        // 更改 Paint 的填充方式，同样的 Path ，进行填充
+        mDataPaint.setColor(Color.BLUE); // 画笔填充颜色 Color 要放在透明度前面才有效果
+        mDataPaint.setAlpha(127);
+        mDataPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+        canvas.drawPath(mDataPath,mDataPaint);
     }
+
+
 }
