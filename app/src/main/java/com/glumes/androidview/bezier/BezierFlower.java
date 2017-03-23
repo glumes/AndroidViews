@@ -28,6 +28,12 @@ import timber.log.Timber;
  * Created by zhaoying on 2017/2/12.
  */
 
+/**
+ * 贝塞尔曲线实现送花效果
+ * 主要利用了属性动画，动画的属性会随着时间的流逝而改变
+ * 在时间流逝时，根据贝塞尔函数计算改变动画相应的位置属性即可
+ */
+
 public class BezierFlower extends RelativeLayout implements View.OnClickListener{
 
     private static final String TAG = BezierFlower.class.getSimpleName();
@@ -188,6 +194,9 @@ public class BezierFlower extends RelativeLayout implements View.OnClickListener
         });
         valueAnimator.start();
 
+        /**
+         * 属性动画，改变 View 的属性
+         */
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {

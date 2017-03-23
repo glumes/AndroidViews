@@ -12,6 +12,9 @@ import android.view.View;
  * Created by zhaoying on 2017/2/10.
  */
 
+/**
+ * Path 实现二阶贝塞尔函数曲线
+ */
 public class SecondOrderBezier extends View {
 
     private Paint mPaintBezier;
