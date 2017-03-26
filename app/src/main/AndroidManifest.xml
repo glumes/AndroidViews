@@ -10,10 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".BezierFlowerActivity" />
-        <activity android:name=".ui.InflaterActivity">
+        <activity android:name=".ui.InflaterActivity"></activity>
+        <activity android:name=".path.PathActivity">
 
         </activity>
-        <activity android:name=".path.PathActivity">
+        <activity android:name=".imagebanner.ImageBannerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
