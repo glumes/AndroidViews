@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.glumes.androidview.imagebanner.ImageBannerActivity">
 
-    <com.glumes.androidview.imagebanner.ImageBanner
-        android:id="@+id/imageBanner"
+    <!--<com.glumes.androidview.imagebanner.ImageBanner-->
+        <!--android:id="@+id/imageBanner"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="200dp"-->
+        <!--android:background="@android:color/darker_gray">-->
+
+    <!--</com.glumes.androidview.imagebanner.ImageBanner>-->
+
+    <com.glumes.androidview.imagebanner.ImageBannerFrameLayout
+        android:id="@+id/imageBannerLayout"
         android:layout_width="match_parent"
         android:layout_height="200dp">
 
-    </com.glumes.androidview.imagebanner.ImageBanner>
-</android.support.constraint.ConstraintLayout>
+    </com.glumes.androidview.imagebanner.ImageBannerFrameLayout>
+
+</LinearLayout>
