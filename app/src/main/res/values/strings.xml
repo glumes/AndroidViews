@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">AndroidView</string>
+    <string name="text_content">文字内容文字内容文字内容文字内容文字内容文字内容文字内容</string>
+
+    <string name="clear_record_title">确认清空字库记录确认清空字库记录确认清空字库记录确认清空字库记录</string>
+    <string name="clear_record_message">字库记录清空后无法恢复，请谨慎操作。</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确认清空</string>
+
 </resources>

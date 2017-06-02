@@ -3,4 +3,17 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="colorToastBackground">#3E4237</color>
+
+    <color name="colorAlertDefault">#1AA2D34C</color>
+    <color name="colorAlertPressed">#FFA2D34B</color>
+
+    <color name="colorAlertTextDefault">#FF3B3419</color>
+    <color name="colorAlertTextPressed">#FFFFFFFF</color>
+    <color name="colorAlertTextMessage">#FF8F8E8B</color>
+    <color name="colorAlertBackground">#F2FFFFFF</color>
+
+    <color name="colorAlertLine">#14000000</color>
+    <color name="transparent">#00000000</color>
 </resources>

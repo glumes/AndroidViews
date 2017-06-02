@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="281dp"
+    android:layout_height="180dp"
+    android:elevation="20dp"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/cv_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_alert_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="44dp"
+            android:gravity="center"
+            android:textColor="@color/colorAlertTextDefault"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_alert_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_alert_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:textColor="@color/colorAlertTextMessage"
+            android:textSize="12sp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/alert_btn_layout_bg"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/btn_cancel"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:background="@drawable/alert_button"
+                android:gravity="center"
+                android:textColor="@color/alert_text"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorAlertLine" />
+
+            <Button
+                android:id="@+id/btn_confirm"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:background="@drawable/alert_button"
+                android:gravity="center"
+                android:textColor="@color/alert_text"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/colorAlertPressed" android:state_pressed="true" />
+
+    <!-- pressed -->
+    <item android:drawable="@color/colorAlertPressed" android:state_focused="true" />
+    <!-- focused -->
+    <item android:drawable="@color/colorAlertDefault" /> <!-- default -->
+
+    <!--<item android:state_pressed="true">-->
+        <!--<shape android:shape="rectangle">-->
+            <!--<corners android:bottomLeftRadius="10dp" />-->
+
+            <!--<solid android:color="@color/colorAlertPressed" />-->
+
+            <!--<stroke android:width="0dp" android:color="@color/transparent" />-->
+        <!--</shape>-->
+    <!--</item>-->
+
+    <!--&lt;!&ndash; pressed &ndash;&gt;-->
+    <!--<item android:state_focused="true">-->
+        <!--<shape android:shape="rectangle">-->
+            <!--<corners android:bottomLeftRadius="10dp" />-->
+
+            <!--<solid android:color="@color/colorAlertPressed" />-->
+
+            <!--<stroke android:width="0dp" android:color="@color/transparent" />-->
+        <!--</shape>-->
+    <!--</item>-->
+    <!--&lt;!&ndash; focused &ndash;&gt;-->
+    <!--<item android:drawable="@color/colorAlertDefault">-->
+        <!--<shape android:shape="rectangle">-->
+            <!--<corners android:bottomLeftRadius="10dp" />-->
+
+            <!--<solid android:color="@color/colorAlertDefault" />-->
+
+            <!--<stroke android:width="0dp" android:color="@color/transparent" />-->
+        <!--</shape>-->
+    <!--</item>-->
+
+</selector>
