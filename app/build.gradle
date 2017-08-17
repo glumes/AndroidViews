@@ -37,6 +37,7 @@ dependencies {
     compile 'com.android.support:palette-v7:' + VERSION
 
 
+    compile 'com.nineoldandroids:library:2.4.0'
 
     compile 'com.jakewharton.timber:timber:4.5.1'
     compile 'com.jakewharton:butterknife:8.5.1'
@@ -45,4 +46,6 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+    compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
 }

@@ -10,18 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".BezierFlowerActivity" />
+
         <activity android:name=".ui.InflaterActivity" />
-        <activity android:name=".path.PathActivity"/>
-        <activity android:name=".imagebanner.ImageBannerActivity">
+
+        <activity android:name=".path.PathActivity" />
+
+        <activity android:name=".imagebanner.ImageBannerActivity"></activity>
+
+        <activity android:name=".customtoast.CustomToastActivity">
 
         </activity>
-        <activity android:name=".customtoast.CustomToastActivity">
+        <activity android:name=".customviews.ImageSliderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
