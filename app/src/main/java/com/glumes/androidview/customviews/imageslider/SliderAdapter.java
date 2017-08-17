@@ -28,7 +28,7 @@ public class SliderAdapter extends PagerAdapter {
     }
 
     private void mockData() {
-        sliderViewList.add()
+//        sliderViewList.add()
     }
 
 
