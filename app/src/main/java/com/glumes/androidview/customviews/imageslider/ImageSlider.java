@@ -45,10 +45,8 @@ public class ImageSlider extends RelativeLayout {
         sliderViewPager.setPageTransformer(true, new RotateDownTransformer());
     }
 
-
     public <T extends BaseSliderView> void addSlider(T slider) {
         slideAdapter.addSlider(slider);
     }
-
 
 }

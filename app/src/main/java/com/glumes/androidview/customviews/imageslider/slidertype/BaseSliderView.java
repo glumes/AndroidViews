@@ -1,6 +1,7 @@
 package com.glumes.androidview.customviews.imageslider.slidertype;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -18,13 +19,15 @@ public abstract class BaseSliderView {
 
     private Context mContext;
 
+    private Bundle mBundle;
+
     public BaseSliderView(Context mContext) {
         this.mContext = mContext;
     }
 
-    public View getView() {
 
-    }
+    public abstract View getView();
+
 
     public BaseSliderView image(int resId) {
         mImageRes = resId;
@@ -39,6 +42,19 @@ public abstract class BaseSliderView {
     public BaseSliderView image(File file) {
         mFile = file;
         return this;
+    }
+
+    public BaseSliderView bundle(Bundle bundle) {
+        mBundle = bundle;
+        return this;
+    }
+
+    public Context getContext() {
+        return mContext;
+    }
+
+    public int getImageResId() {
+        return mImageRes;
     }
 
 }
