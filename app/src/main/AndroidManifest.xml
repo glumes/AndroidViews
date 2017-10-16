@@ -10,14 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".BezierFlowerActivity"/>
-        <activity android:name=".ui.InflaterActivity"/>
         <activity android:name=".path.PathActivity"/>
         <activity android:name=".imagebanner.ImageBannerActivity"/>
-        <activity android:name=".customtoast.CustomToastActivity">
-        </activity>
-        <activity android:name=".customviews.ImageSliderActivity">
-
-        </activity>
 
         <activity android:name=".ViewListActivity">
             <intent-filter>

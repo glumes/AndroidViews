@@ -1,5 +1,7 @@
 package com.glumes.androidview.viewtype;
 
+import android.view.View;
+
 import com.glumes.androidview.databinding.ViewTypeItemLayoutBinding;
 import com.glumes.databindingadapter.BindingViewHolder;
 
@@ -15,9 +17,11 @@ public class ViewTypeHolder extends BindingViewHolder<ViewTypeModel, ViewTypeIte
     }
 
     @Override
-    protected void onBind(ViewTypeModel viewTypeModel) {
-        mBinding.setViewmodle(viewTypeModel);
+    protected void onBind(ViewTypeModel viewTypeModel, int position) {
         mBinding.executePendingBindings();
-        mBinding.viewtype.setOnClickListener();
+        mBinding.setViewmodel(viewTypeModel);
+        mBinding.setEventHandler(new EventHandler());
+        mBinding.viewtype.setClickable(true);
     }
+
 }

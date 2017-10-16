@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
         <variable
             name="viewmodel"
             type="com.glumes.androidview.viewtype.ViewTypeModel"/>
+
+        <variable
+            name="eventHandler"
+            type="com.glumes.androidview.viewtype.EventHandler"/>
     </data>
 
-    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                                        xmlns:app="http://schemas.android.com/apk/res-auto"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="32dp"
-                                        android:orientation="vertical"
-                                        app:cardCornerRadius="5dp"
-                                        app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/viewtype"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
+            android:elevation="8dp"
             android:gravity="center"
-            android:text="@{viewmodel.title}"/>
-    </android.support.v7.widget.CardView>
+            android:onClick="@{(v) -> eventHandler.onViewTypeClick(v,viewmodel)}"
+            android:text="@{viewmodel.title}"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
 
 </layout>
